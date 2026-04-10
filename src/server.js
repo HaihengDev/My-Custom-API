@@ -12,8 +12,8 @@ const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors());
-app.use('/api/products', productRoute);
-app.use('/api/students', studentRoute);
+app.use('/products', productRoute);
+app.use('/students', studentRoute);
 
 connectDB().then(() => {
   const server = createServer(app);
