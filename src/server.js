@@ -6,6 +6,7 @@ import cors from 'cors';
 import { connectDB } from './config/db.js';
 import productRoute from './routes/productRoute.js';
 import studentRoute from './routes/studentRoute.js';
+import courseRoute from './routes/courseRoute.js';
 dotenv.config();
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use('/products', productRoute);
 app.use('/students', studentRoute);
+app.use('/courses', courseRoute);
 
 connectDB().then(() => {
   const server = createServer(app);
